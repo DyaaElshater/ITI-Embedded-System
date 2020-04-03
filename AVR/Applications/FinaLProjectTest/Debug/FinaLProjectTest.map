@@ -1,0 +1,730 @@
+Archive member included because of file (symbol)
+
+f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                              ./TIMER0_prog.o (__udivmodsi4)
+f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                              f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
+f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                              ./APP_Project.o (__do_copy_data)
+f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                              ./APP.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+Queue               0x18              ./APP_Project.o
+call_back           0x2               ./EXT0_prg.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+LOAD ./APP.o
+LOAD ./APP_Project.o
+LOAD ./DIO_prg.o
+LOAD ./EXT0_prg.o
+LOAD ./GIE_prg.o
+LOAD ./RTO_porg.o
+LOAD ./TIMER0_prog.o
+LOAD ./TIMER_prog.o
+LOAD ./main.o
+LOAD f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+LOAD f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a
+LOAD f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x20e0
+ *(.vectors)
+ .vectors       0x00000000       0x54 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000054                . = ALIGN (0x2)
+                0x00000054                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000054        0x0 linker stubs
+ *(.trampolines*)
+                0x00000054                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000054                __ctors_start = .
+ *(.ctors)
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
+ *(.dtors)
+                0x00000054                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000054        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x00000054                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000054        0xc f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000060       0x16 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
+ .init4         0x00000076       0x10 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000076                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000086        0x8 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000008e        0x4 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+                0x0000008e                __vector_12
+                0x0000008e                __bad_interrupt
+                0x0000008e                __vector_6
+                0x0000008e                __vector_3
+                0x0000008e                __vector_13
+                0x0000008e                __vector_17
+                0x0000008e                __vector_19
+                0x0000008e                __vector_5
+                0x0000008e                __vector_4
+                0x0000008e                __vector_9
+                0x0000008e                __vector_2
+                0x0000008e                __vector_15
+                0x0000008e                __vector_8
+                0x0000008e                __vector_14
+                0x0000008e                __vector_16
+                0x0000008e                __vector_18
+                0x0000008e                __vector_20
+ .text          0x00000092        0x0 ./APP.o
+ .text          0x00000092        0x0 ./APP_Project.o
+ .text          0x00000092        0x0 ./DIO_prg.o
+ .text          0x00000092        0x0 ./EXT0_prg.o
+ .text          0x00000092        0x0 ./GIE_prg.o
+ .text          0x00000092        0x0 ./RTO_porg.o
+ .text          0x00000092        0x0 ./TIMER0_prog.o
+ .text          0x00000092        0x0 ./TIMER_prog.o
+ .text          0x00000092        0x0 ./main.o
+ .text          0x00000092        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00000092        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text          0x00000092        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000092        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x00000092                . = ALIGN (0x2)
+ *(.text.*)
+ .text.fun      0x00000092       0x14 ./APP.o
+                0x00000092                fun
+ .text.POV_INT0HallEffectAction
+                0x000000a6       0x1c ./APP_Project.o
+ .text.POV_vidStart
+                0x000000c2       0x3c ./APP_Project.o
+                0x000000c2                POV_vidStart
+ .text.POV_UpdateLeds
+                0x000000fe       0x9a ./APP_Project.o
+                0x000000fe                POV_UpdateLeds
+ .text.POV_vidWriteChar
+                0x00000198      0xa30 ./APP_Project.o
+                0x00000198                POV_vidWriteChar
+ .text.POV_vidWriteString
+                0x00000bc8       0x52 ./APP_Project.o
+                0x00000bc8                POV_vidWriteString
+ .text.POV_vidSpecificChar
+                0x00000c1a       0x32 ./APP_Project.o
+                0x00000c1a                POV_vidSpecificChar
+ .text.POV_vidClearLastChar
+                0x00000c4c       0x2e ./APP_Project.o
+                0x00000c4c                POV_vidClearLastChar
+ .text.POV_vidGoToIndex
+                0x00000c7a       0x1e ./APP_Project.o
+                0x00000c7a                POV_vidGoToIndex
+ .text.POV_vidClearAll
+                0x00000c98       0x12 ./APP_Project.o
+                0x00000c98                POV_vidClearAll
+ .text.DIO_enuInt
+                0x00000caa       0x32 ./DIO_prg.o
+                0x00000caa                DIO_enuInt
+ .text.DIO_enuSetPinValue
+                0x00000cdc      0x1c0 ./DIO_prg.o
+                0x00000cdc                DIO_enuSetPinValue
+ .text.DIO_enuGetPinValue
+                0x00000e9c       0xfe ./DIO_prg.o
+                0x00000e9c                DIO_enuGetPinValue
+ .text.DIO_enuSetPinDirection
+                0x00000f9a      0x1be ./DIO_prg.o
+                0x00000f9a                DIO_enuSetPinDirection
+ .text.DIO_enuTogglePin
+                0x00001158       0xe8 ./DIO_prg.o
+                0x00001158                DIO_enuTogglePin
+ .text.DIO_enuPullUp
+                0x00001240       0x1c ./DIO_prg.o
+                0x00001240                DIO_enuPullUp
+ .text.DIO_enuGetPortX
+                0x0000125c       0xa0 ./DIO_prg.o
+                0x0000125c                DIO_enuGetPortX
+ .text.DIO_enuSetPortX
+                0x000012fc       0x8e ./DIO_prg.o
+                0x000012fc                DIO_enuSetPortX
+ .text.DIO_enuGetPortY
+                0x0000138a       0xa0 ./DIO_prg.o
+                0x0000138a                DIO_enuGetPortY
+ .text.DIO_enuSetPortY
+                0x0000142a       0x8e ./DIO_prg.o
+                0x0000142a                DIO_enuSetPortY
+ .text.DIO_enuGetPortZ
+                0x000014b8       0xa8 ./DIO_prg.o
+                0x000014b8                DIO_enuGetPortZ
+ .text.DIO_enuSetPortZ
+                0x00001560       0x8e ./DIO_prg.o
+                0x00001560                DIO_enuSetPortZ
+ .text.Set_Port_Direction
+                0x000015ee       0x92 ./DIO_prg.o
+                0x000015ee                Set_Port_Direction
+ .text.Set_Port_Value
+                0x00001680       0x82 ./DIO_prg.o
+                0x00001680                Set_Port_Value
+ .text.EXT0_Set_Call_back
+                0x00001702       0x24 ./EXT0_prg.o
+                0x00001702                EXT0_Set_Call_back
+ .text.EXT0_vidInit
+                0x00001726       0x46 ./EXT0_prg.o
+                0x00001726                EXT0_vidInit
+ .text.EXT0_enuChange_Mode
+                0x0000176c       0xca ./EXT0_prg.o
+                0x0000176c                EXT0_enuChange_Mode
+ .text.EXT0_vidDisable
+                0x00001836       0x1c ./EXT0_prg.o
+                0x00001836                EXT0_vidDisable
+ .text.EXT0_u8Read_Flag
+                0x00001852       0x1e ./EXT0_prg.o
+                0x00001852                EXT0_u8Read_Flag
+ .text.__vector_1
+                0x00001870       0x5a ./EXT0_prg.o
+                0x00001870                __vector_1
+ .text.Enable_InterruptEnable
+                0x000018ca       0x1c ./GIE_prg.o
+                0x000018ca                Enable_InterruptEnable
+ .text.Disable_InterruptEnable
+                0x000018e6       0x1c ./GIE_prg.o
+                0x000018e6                Disable_InterruptEnable
+ .text.RTO_voidSchedular
+                0x00001902       0xf0 ./RTO_porg.o
+ .text.RTO_enuInit
+                0x000019f2       0x90 ./RTO_porg.o
+                0x000019f2                RTO_enuInit
+ .text.RTO_enuTaskPlay
+                0x00001a82       0x5c ./RTO_porg.o
+                0x00001a82                RTO_enuTaskPlay
+ .text.RTO_enuTaskPause
+                0x00001ade       0x5e ./RTO_porg.o
+                0x00001ade                RTO_enuTaskPause
+ .text.RTO_enuCreatTask
+                0x00001b3c       0x74 ./RTO_porg.o
+                0x00001b3c                RTO_enuCreatTask
+ .text.RTO_enuDeleteTask
+                0x00001bb0       0x58 ./RTO_porg.o
+                0x00001bb0                RTO_enuDeleteTask
+ .text.RTO_enuSettingTickTime
+                0x00001c08       0x28 ./RTO_porg.o
+                0x00001c08                RTO_enuSettingTickTime
+ .text.stub     0x00001c30        0xe ./TIMER0_prog.o
+                0x00001c30                stub
+ .text.TIMER0_enuInit
+                0x00001c3e       0xee ./TIMER0_prog.o
+                0x00001c3e                TIMER0_enuInit
+ .text.TIMER0_enuSetCallback_Ovf
+                0x00001d2c       0x38 ./TIMER0_prog.o
+                0x00001d2c                TIMER0_enuSetCallback_Ovf
+ .text.TIMER0_enuSetCallback_CTC
+                0x00001d64       0x38 ./TIMER0_prog.o
+                0x00001d64                TIMER0_enuSetCallback_CTC
+ .text.__vector_11
+                0x00001d9c       0xa4 ./TIMER0_prog.o
+                0x00001d9c                __vector_11
+ .text.__vector_10
+                0x00001e40       0x8c ./TIMER0_prog.o
+                0x00001e40                __vector_10
+ .text.TIMER0_enuChangePwmDutyCycle
+                0x00001ecc       0x16 ./TIMER0_prog.o
+                0x00001ecc                TIMER0_enuChangePwmDutyCycle
+ .text.TIMER0_enuDisableTimer0
+                0x00001ee2       0x3c ./TIMER0_prog.o
+                0x00001ee2                TIMER0_enuDisableTimer0
+ .text.Timer1_init
+                0x00001f1e       0x98 ./TIMER_prog.o
+                0x00001f1e                Timer1_init
+ .text.Timer1_vidChangeOCR1AValue
+                0x00001fb6       0x2e ./TIMER_prog.o
+                0x00001fb6                Timer1_vidChangeOCR1AValue
+ .text.TIMER1_vidSetCallback
+                0x00001fe4       0x36 ./TIMER_prog.o
+                0x00001fe4                TIMER1_vidSetCallback
+ .text.__vector_7
+                0x0000201a       0x68 ./TIMER_prog.o
+                0x0000201a                __vector_7
+ .text.main     0x00002082       0x16 ./main.o
+                0x00002082                main
+ .text.libgcc   0x00002098       0x44 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00002098                __udivmodsi4
+ .text.libgcc   0x000020dc        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000020dc        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000020dc        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+                0x000020dc                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000020dc        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x000020dc                exit
+                0x000020dc                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000020dc        0x4 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000020e0                _etext = .
+
+.data           0x00800060      0x222 load address 0x000020e0
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .data          0x00800060        0x0 ./APP.o
+ .data          0x00800060        0x0 ./APP_Project.o
+ .data          0x00800060        0x0 ./DIO_prg.o
+ .data          0x00800060        0x0 ./EXT0_prg.o
+ .data          0x00800060        0x0 ./GIE_prg.o
+ .data          0x00800060        0x0 ./RTO_porg.o
+ .data          0x00800060        0x0 ./TIMER0_prog.o
+ .data          0x00800060        0x0 ./TIMER_prog.o
+ .data          0x00800060        0xb ./main.o
+ .data          0x0080006b        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x0080006b        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x0080006b        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080006b        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.data*)
+ .data.SpecificChar
+                0x0080006b        0x8 ./APP_Project.o
+                0x0080006b                SpecificChar
+ .data.a        0x00800073        0x8 ./APP_Project.o
+                0x00800073                a
+ .data.b        0x0080007b        0x8 ./APP_Project.o
+                0x0080007b                b
+ .data.c        0x00800083        0x8 ./APP_Project.o
+                0x00800083                c
+ .data.d        0x0080008b        0x8 ./APP_Project.o
+                0x0080008b                d
+ .data.e        0x00800093        0x8 ./APP_Project.o
+                0x00800093                e
+ .data.f        0x0080009b        0x8 ./APP_Project.o
+                0x0080009b                f
+ .data.g        0x008000a3        0x8 ./APP_Project.o
+                0x008000a3                g
+ .data.h        0x008000ab        0x8 ./APP_Project.o
+                0x008000ab                h
+ .data.i        0x008000b3        0x8 ./APP_Project.o
+                0x008000b3                i
+ .data.j        0x008000bb        0x8 ./APP_Project.o
+                0x008000bb                j
+ .data.k        0x008000c3        0x8 ./APP_Project.o
+                0x008000c3                k
+ .data.l        0x008000cb        0x8 ./APP_Project.o
+                0x008000cb                l
+ .data.m        0x008000d3        0x8 ./APP_Project.o
+                0x008000d3                m
+ .data.n        0x008000db        0x8 ./APP_Project.o
+                0x008000db                n
+ .data.o        0x008000e3        0x8 ./APP_Project.o
+                0x008000e3                o
+ .data.p        0x008000eb        0x8 ./APP_Project.o
+                0x008000eb                p
+ .data.q        0x008000f3        0x8 ./APP_Project.o
+                0x008000f3                q
+ .data.r        0x008000fb        0x8 ./APP_Project.o
+                0x008000fb                r
+ .data.s        0x00800103        0x8 ./APP_Project.o
+                0x00800103                s
+ .data.t        0x0080010b        0x8 ./APP_Project.o
+                0x0080010b                t
+ .data.u        0x00800113        0x8 ./APP_Project.o
+                0x00800113                u
+ .data.v        0x0080011b        0x8 ./APP_Project.o
+                0x0080011b                v
+ .data.w        0x00800123        0x8 ./APP_Project.o
+                0x00800123                w
+ .data.x        0x0080012b        0x8 ./APP_Project.o
+                0x0080012b                x
+ .data.y        0x00800133        0x8 ./APP_Project.o
+                0x00800133                y
+ .data.z        0x0080013b        0x8 ./APP_Project.o
+                0x0080013b                z
+ .data.A        0x00800143        0x8 ./APP_Project.o
+                0x00800143                A
+ .data.B        0x0080014b        0x8 ./APP_Project.o
+                0x0080014b                B
+ .data.C        0x00800153        0x8 ./APP_Project.o
+                0x00800153                C
+ .data.D        0x0080015b        0x8 ./APP_Project.o
+                0x0080015b                D
+ .data.E        0x00800163        0x8 ./APP_Project.o
+                0x00800163                E
+ .data.F        0x0080016b        0x8 ./APP_Project.o
+                0x0080016b                F
+ .data.G        0x00800173        0x8 ./APP_Project.o
+                0x00800173                G
+ .data.H        0x0080017b        0x8 ./APP_Project.o
+                0x0080017b                H
+ .data.I        0x00800183        0x8 ./APP_Project.o
+                0x00800183                I
+ .data.J        0x0080018b        0x8 ./APP_Project.o
+                0x0080018b                J
+ .data.K        0x00800193        0x8 ./APP_Project.o
+                0x00800193                K
+ .data.L        0x0080019b        0x8 ./APP_Project.o
+                0x0080019b                L
+ .data.M        0x008001a3        0x8 ./APP_Project.o
+                0x008001a3                M
+ .data.N        0x008001ab        0x8 ./APP_Project.o
+                0x008001ab                N
+ .data.O        0x008001b3        0x8 ./APP_Project.o
+                0x008001b3                O
+ .data.P        0x008001bb        0x8 ./APP_Project.o
+                0x008001bb                P
+ .data.Q        0x008001c3        0x8 ./APP_Project.o
+                0x008001c3                Q
+ .data.R        0x008001cb        0x8 ./APP_Project.o
+                0x008001cb                R
+ .data.S        0x008001d3        0x8 ./APP_Project.o
+                0x008001d3                S
+ .data.T        0x008001db        0x8 ./APP_Project.o
+                0x008001db                T
+ .data.U        0x008001e3        0x8 ./APP_Project.o
+                0x008001e3                U
+ .data.V        0x008001eb        0x8 ./APP_Project.o
+                0x008001eb                V
+ .data.W        0x008001f3        0x8 ./APP_Project.o
+                0x008001f3                W
+ .data.X        0x008001fb        0x8 ./APP_Project.o
+                0x008001fb                X
+ .data.Y        0x00800203        0x8 ./APP_Project.o
+                0x00800203                Y
+ .data.Z        0x0080020b        0x8 ./APP_Project.o
+                0x0080020b                Z
+ .data.n0       0x00800213        0x8 ./APP_Project.o
+                0x00800213                n0
+ .data.n1       0x0080021b        0x8 ./APP_Project.o
+                0x0080021b                n1
+ .data.n2       0x00800223        0x8 ./APP_Project.o
+                0x00800223                n2
+ .data.n3       0x0080022b        0x8 ./APP_Project.o
+                0x0080022b                n3
+ .data.n4       0x00800233        0x8 ./APP_Project.o
+                0x00800233                n4
+ .data.n5       0x0080023b        0x8 ./APP_Project.o
+                0x0080023b                n5
+ .data.n6       0x00800243        0x8 ./APP_Project.o
+                0x00800243                n6
+ .data.n7       0x0080024b        0x8 ./APP_Project.o
+                0x0080024b                n7
+ .data.n8       0x00800253        0x8 ./APP_Project.o
+                0x00800253                n8
+ .data.n9       0x0080025b        0x8 ./APP_Project.o
+                0x0080025b                n9
+ .data.DIO_arrPortX
+                0x00800263        0x8 ./DIO_prg.o
+ .data.DIO_arrPortY
+                0x0080026b        0x8 ./DIO_prg.o
+ .data.DIO_arrPortZ
+                0x00800273        0x8 ./DIO_prg.o
+ .data.Task_ARRAY
+                0x0080027b        0x7 ./RTO_porg.o
+                0x0080027b                Task_ARRAY
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800282                . = ALIGN (0x2)
+                0x00800282                _edata = .
+                0x00800282                PROVIDE (__data_end, .)
+
+.bss            0x00800282      0x11b
+                0x00800282                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x00800282        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x00800282        0x0 ./APP.o
+ .bss           0x00800282        0x0 ./APP_Project.o
+ .bss           0x00800282        0x0 ./DIO_prg.o
+ .bss           0x00800282        0x0 ./EXT0_prg.o
+ .bss           0x00800282        0x0 ./GIE_prg.o
+ .bss           0x00800282        0x0 ./RTO_porg.o
+ .bss           0x00800282        0x0 ./TIMER0_prog.o
+ .bss           0x00800282        0x0 ./TIMER_prog.o
+ .bss           0x00800282        0x0 ./main.o
+ .bss           0x00800282        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x00800282        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x00800282        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00800282        0x0 f:/courses/embedded iti/tools/imt_environment/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ .bss.u8Seconds
+                0x00800282        0x1 ./APP.o
+                0x00800282                u8Seconds
+ .bss.u8Minutes
+                0x00800283        0x1 ./APP.o
+                0x00800283                u8Minutes
+ .bss.u8Hours   0x00800284        0x1 ./APP.o
+                0x00800284                u8Hours
+ .bss.u8MinEdit
+                0x00800285        0x1 ./APP.o
+                0x00800285                u8MinEdit
+ .bss.u8HEdit   0x00800286        0x1 ./APP.o
+                0x00800286                u8HEdit
+ .bss.space     0x00800287        0x8 ./APP_Project.o
+                0x00800287                space
+ .bss.u8QueueIndexMax
+                0x0080028f        0x1 ./APP_Project.o
+ .bss.u8QueueIndexPrint
+                0x00800290        0x1 ./APP_Project.o
+ .bss.u8ArrayIndex
+                0x00800291        0x1 ./APP_Project.o
+ .bss.Tasks_Que
+                0x00800292       0xc8 ./RTO_porg.o
+ .bss.Loc_u16Counter.1525
+                0x0080035a        0x2 ./TIMER0_prog.o
+ .bss.Loc_u16CompareCounter.1545
+                0x0080035c        0x2 ./TIMER0_prog.o
+ .bss.u16NbOVF  0x0080035e        0x2 ./TIMER0_prog.o
+ .bss.u16NbCompareMatch
+                0x00800360        0x2 ./TIMER0_prog.o
+ .bss.u8Preload
+                0x00800362        0x1 ./TIMER0_prog.o
+ .bss.CallBack  0x00800363       0x10 ./TIMER0_prog.o
+ .bss.callback  0x00800373       0x10 ./TIMER_prog.o
+ *(COMMON)
+ COMMON         0x00800383       0x18 ./APP_Project.o
+                0x00800383                Queue
+ COMMON         0x0080039b        0x2 ./EXT0_prg.o
+                0x0080039b                call_back
+                0x0080039d                PROVIDE (__bss_end, .)
+                0x000020e0                __data_load_start = LOADADDR (.data)
+                0x00002302                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080039d        0x0
+                0x0080039d                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x0080039d                PROVIDE (__noinit_end, .)
+                0x0080039d                _end = .
+                0x0080039d                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000     0x3a14
+ *(.stab)
+ .stab          0x00000000      0x750 ./APP.o
+ .stab          0x00000750      0xa44 ./APP_Project.o
+                               0x1044 (size before relaxing)
+ .stab          0x00001194     0x12d8 ./DIO_prg.o
+                               0x12e4 (size before relaxing)
+ .stab          0x0000246c      0x330 ./EXT0_prg.o
+                                0x930 (size before relaxing)
+ .stab          0x0000279c      0x144 ./GIE_prg.o
+                                0x744 (size before relaxing)
+ .stab          0x000028e0      0x5ac ./RTO_porg.o
+                                0xbd0 (size before relaxing)
+ .stab          0x00002e8c      0x774 ./TIMER0_prog.o
+                                0xd74 (size before relaxing)
+ .stab          0x00003600      0x2ac ./TIMER_prog.o
+                                0xa68 (size before relaxing)
+ .stab          0x000038ac      0x168 ./main.o
+                                0x90c (size before relaxing)
+
+.stabstr        0x00000000     0x2b68
+ *(.stabstr)
+ .stabstr       0x00000000     0x2b68 ./APP.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(FinaLProjectTest.elf elf32-avr)
+LOAD linker stubs
