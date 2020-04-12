@@ -179,13 +179,15 @@ typedef struct
 	u32 LCKR;
 }GPIO_Register;
 
-volatile GPIO_Register * const GPIOA = (volatile GPIO_Register*)(0x40010800);
-volatile GPIO_Register * const GPIOB = (volatile GPIO_Register*)(0x40010C00);
-volatile GPIO_Register * const GPIOC = (volatile GPIO_Register*)(0x40011000);
-volatile GPIO_Register * const GPIOD = (volatile GPIO_Register*)(0x40011400);
-volatile GPIO_Register * const GPIOE = (volatile GPIO_Register*)(0x40011800);
-volatile GPIO_Register * const GPIOF = (volatile GPIO_Register*)(0x40011C00);
-volatile GPIO_Register * const GPIOG = (volatile GPIO_Register*)(0x40012000);
+
+static volatile GPIO_Register * const GPIOA = (volatile GPIO_Register*)(0x40010800);
+static volatile GPIO_Register * const GPIOB = (volatile GPIO_Register*)(0x40010C00);
+static volatile GPIO_Register * const GPIOC = (volatile GPIO_Register*)(0x40011000);
+static volatile GPIO_Register * const GPIOD = (volatile GPIO_Register*)(0x40011400);
+static volatile GPIO_Register * const GPIOE = (volatile GPIO_Register*)(0x40011800);
+static volatile GPIO_Register * const GPIOF = (volatile GPIO_Register*)(0x40011C00);
+static volatile GPIO_Register * const GPIOG = (volatile GPIO_Register*)(0x40012000);
+
 
 
 
@@ -250,10 +252,10 @@ void GPIO_vidPullDown(GPIO_Register* pstPortCpy ,u8 u8PinNbCpy);
 
 
 /****************************************************/
-/** Descrption:Function used to get value form PORTX*/
+/** Descrption:Function used to get pin value		*/
 /** Inputs : pu8ValueCpy pointer to input value 	*/
 /** Output : Error Status  							*/
 /****************************************************/
-
+u8 GPIO_u8GetPinValue(GPIO_Register* pstPortCpy ,u8 u8PinNbCpy);
 
 #endif /* GPIO_INT_H_ */
