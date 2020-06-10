@@ -19,16 +19,16 @@
 
 
 			/*GPIO*/
-#define RCC_GPIO_G				RCC_DISABLE
-#define RCC_GPIO_F				RCC_DISABLE
-#define	RCC_GPIO_E				RCC_DISABLE
-#define	RCC_GPIO_D				RCC_DISABLE
-#define	RCC_GPIO_C				RCC_DISABLE
-#define	RCC_GPIO_B				RCC_DISABLE
+#define RCC_GPIO_G				RCC_ENABLE
+#define RCC_GPIO_F				RCC_ENABLE
+#define	RCC_GPIO_E				RCC_ENABLE
+#define	RCC_GPIO_D				RCC_ENABLE
+#define	RCC_GPIO_C				RCC_ENABLE
+#define	RCC_GPIO_B				RCC_ENABLE
 #define	RCC_GPIO_A				RCC_ENABLE
 
 			/*ALternate Function*/
-#define RCC_AFIO				RCC_DISABLE
+#define RCC_AFIO				RCC_ENABLE
 
 			/*Timers*/
 #define RCC_TIMER14				RCC_DISABLE

@@ -66,9 +66,9 @@ void RCC_vidSetHSI()
 	while(!GET_BIT(RCC->CR,HSIRDY));
 	RCC->CFGR = SW_HSI ;
 }
-void RCC_vidSetPll_HSI(u8 u8PLLMULCpy)
+void RCC_vidSetPll_HSI(PLLMUL u8PLLMULCpy)
 {
-	if(RCC_u8SysClkStatus()!=HSI)
+	if(RCC_enuSysClkStatus()!=HSI)
 	{
 		SET_BIT(RCC->CR,HSION);
 		while(!GET_BIT(RCC->CR,HSIRDY));
@@ -81,9 +81,9 @@ void RCC_vidSetPll_HSI(u8 u8PLLMULCpy)
 	CLEAR_BIT(RCC->CFGR,PLLSRC);
 	RCC->CFGR |= (u8PLLMULCpy&0x0f)<<18;
 }
-void RCC_vidSetPll_HSE(u8 u8PREDIVCpy,u8 u8PLLMULCpy)
+void RCC_vidSetPll_HSE(PREDIV u8PREDIVCpy,PLLMUL u8PLLMULCpy)
 {
-	if(RCC_u8SysClkStatus()!= HSE)
+	if(RCC_enuSysClkStatus()!= HSE)
 	{
 		SET_BIT(RCC->CR,HSEON);
 		while(!GET_BIT(RCC->CR,HSERDY));
@@ -98,33 +98,33 @@ void RCC_vidSetPll_HSE(u8 u8PREDIVCpy,u8 u8PLLMULCpy)
 	RCC->CFGR  |= (u8PLLMULCpy	& 0x0f) <<18;
 }
 
-u8 	 RCC_u8SysClkStatus()
+SysCLKStatus RCC_enuSysClkStatus()
 {
 	return (RCC->CFGR  & 0b1100)>>2;
 }
 
-void RCC_vidMcuClkOut(u8 u8MCOCpy)
+void RCC_vidMcuClkOut(MCO u8MCOCpy)
 {
 	RCC->CR |= (u8MCOCpy & 0x07) <<24 ;
 }
 
 
-void RCC_vidADC_Prescaller(u8 u8PrescallerCpy)
+void RCC_vidADC_Prescaller(PreScaller u8PrescallerCpy)
 {
 	RCC->CFGR |= (u8PrescallerCpy & 0x03) <<14 ;
 }
 
-void RCC_vidAPB2_Prescaller(u8 u8PrescallerCpy)
+void RCC_vidAPB2_Prescaller(Bus_PreScaller  u8PrescallerCpy)
 {
 	RCC->CFGR |= (u8PrescallerCpy & 0x07) <<11 ;
 }
 
-void RCC_vidAPB1_Prescaller(u8 u8PrescallerCpy)
+void RCC_vidAPB1_Prescaller(Bus_PreScaller  u8PrescallerCpy)
 {
 	RCC->CFGR |= (u8PrescallerCpy & 0x07) <<8 ;
 }
 
-void RCC_vidAHB_Prescaller(u8 u8PrescallerCpy)
+void RCC_vidAHB_Prescaller(AHB_PreScaller u8PrescallerCpy)
 {
 	RCC->CFGR |= (u8PrescallerCpy & 0x0f) <<4 ;
 }

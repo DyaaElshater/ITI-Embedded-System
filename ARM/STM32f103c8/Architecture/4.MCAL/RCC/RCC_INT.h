@@ -16,20 +16,21 @@
 #define RCC_DISABLE		0
 
 
-static enum PREDIV {CLK_DIV1,CLK_DIV2};
 
-static enum PLLMUL {CLK_X2,CLK_X3,CLK_X4,CLK_X5,CLK_X6,CLK_X7,CLK_X8,CLK_X9,CLK_X10,CLK_X11,CLK_X12,CLK_X13,CLK_X14,CLK_X15,CLK_X16};
+typedef enum  {CLK_DIV1,CLK_DIV2}PREDIV;
 
-static enum SysCLKStatus { HSI,HSE,PLL};
+typedef enum  {CLK_X2,CLK_X3,CLK_X4,CLK_X5,CLK_X6,CLK_X7,CLK_X8,CLK_X9,CLK_X10,CLK_X11,CLK_X12,CLK_X13,CLK_X14,CLK_X15,CLK_X16}PLLMUL;
 
-static enum PreScaller { HCLK_DIV2=0,HCLK_DIV4,HCLK_DIV6,HCLK_DIV8};
+typedef enum  { HSI,HSE,PLL}SysCLKStatus;
 
-static enum Bus_PreScaller { BUS_HCLK_NOT_DIVIDED=0,BUS_HCLK_DIV2=4,BUS_HCLK_DIV4,BUS_HCLK_DIV8,BUS_HCLK_DIV16};
+typedef enum  { HCLK_DIV2=0,HCLK_DIV4,HCLK_DIV6,HCLK_DIV8}PreScaller;
 
-static enum AHB_PreScaller { AHB_HCLK_NOT_DIVIDED=0,AHB_HCLK_DIV2=8,AHB_HCLK_DIV4,AHB_HCLK_DIV8,AHB_HCLK_DIV16,AHB_HCLK_DIV64,AHB_HCLK_DIV128,AHB_HCLK_DIV256,AHB_HCLK_DIV512};
+typedef enum  { BUS_HCLK_NOT_DIVIDED=0,BUS_HCLK_DIV2=4,BUS_HCLK_DIV4,BUS_HCLK_DIV8,BUS_HCLK_DIV16}Bus_PreScaller;
+
+typedef enum  { AHB_HCLK_NOT_DIVIDED=0,AHB_HCLK_DIV2=8,AHB_HCLK_DIV4,AHB_HCLK_DIV8,AHB_HCLK_DIV16,AHB_HCLK_DIV64,AHB_HCLK_DIV128,AHB_HCLK_DIV256,AHB_HCLK_DIV512}AHB_PreScaller;
 
 /*Microcontroller check output*/
-static enum MCO {NO_CLK_OUT,SYSCLK_OUT=4,HSI_OUT,HSE_OUT,PLL_DIV2_OUT};
+typedef enum {NO_CLK_OUT,SYSCLK_OUT=4,HSI_OUT,HSE_OUT,PLL_DIV2_OUT}MCO ;
 
 void RCC_vidInit(void);
 void RCC_vidSetHSE(void);
@@ -38,7 +39,7 @@ void RCC_vidSetHSI(void);
 		*				  ..
 		*				  CLK_X16
 		*													*/
-void RCC_vidSetPll_HSI(u8 u8PLLMULCpy);
+void RCC_vidSetPll_HSI(PLLMUL u8PLLMULCpy);
 		/** u8PREDIVCpy = CLK_DIV1
 		 *				  CLK_DIV2
 		 *
@@ -46,8 +47,8 @@ void RCC_vidSetPll_HSI(u8 u8PLLMULCpy);
 		 *				  ..
 		 *				  CLK_16
 		 * 													*/
-void RCC_vidSetPll_HSE(u8 u8PREDIVCpy,u8 u8PLLMULCpy);
-u8 	 RCC_u8SysClkStatus();
+void RCC_vidSetPll_HSE(PREDIV u8PREDIVCpy,PLLMUL u8PLLMULCpy);
+SysCLKStatus RCC_enuSysClkStatus();
 
 		/** u8MCOCpu =
 			 * 			NO_CLK_OUT
@@ -56,7 +57,7 @@ u8 	 RCC_u8SysClkStatus();
 			 * 			HSE_OUT
 			 * 			PLL_DIV2_OUT
 			  																*/
-void RCC_vidMcuClkOut(u8 u8MCOCpy);
+void RCC_vidMcuClkOut(MCO u8MCOCpy);
 
 		/** u8PrescallerCpy =
 			 * 				HCLK_DIV2
@@ -64,7 +65,7 @@ void RCC_vidMcuClkOut(u8 u8MCOCpy);
 			 * 				HCLK_DIV6
 			 * 				HCLK_DIV8
 			  																*/
-void RCC_vidADC_Prescaller(u8 u8PrescallerCpy);
+void RCC_vidADC_Prescaller(PreScaller u8PrescallerCpy);
 
 		/*** For BUS
 		 **  u8PrescallerCpy =
@@ -76,9 +77,9 @@ void RCC_vidADC_Prescaller(u8 u8PrescallerCpy);
 		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 */
 
 
-void RCC_vidAPB2_Prescaller(u8 u8PrescallerCpy);
+void RCC_vidAPB2_Prescaller(Bus_PreScaller  u8PrescallerCpy);
 
-void RCC_vidAPB1_Prescaller(u8 u8PrescallerCpy);
+void RCC_vidAPB1_Prescaller(Bus_PreScaller  u8PrescallerCpy);
 
 		/*** FOR AHB BUS
 		 **  u8PrescallerCpy =
@@ -93,7 +94,7 @@ void RCC_vidAPB1_Prescaller(u8 u8PrescallerCpy);
 		 *						AHB_HCLK_DIV512
 		 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 */
 
-void RCC_vidAHB_Prescaller(u8 u8PrescallerCpy);
+void RCC_vidAHB_Prescaller(AHB_PreScaller u8PrescallerCpy);
 
 
 
