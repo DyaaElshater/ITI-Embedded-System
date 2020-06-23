@@ -2,7 +2,7 @@
 /**Author 	  : Dyaa Elshater				 */
 /**Date		  : 7/11/2019					 */
 /**Descrption : Standard types				 */
-/**Version 	  : 3.0 v
+/**Version 	  : 3.0 v                        */
 /*********************************************/
 #ifndef _STD_TYPES_H_
 #define _STD_TYPES_H_
