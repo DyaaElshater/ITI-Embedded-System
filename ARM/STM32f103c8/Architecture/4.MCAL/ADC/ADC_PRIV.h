@@ -33,9 +33,17 @@ typedef struct
 	u32 DR;
 }ADC_REG;
 
+/*
+#define ADC1	((volatile ADC_REG*)(0x40012400))
+#define ADC2	((volatile ADC_REG*)(0x40012800))
+#define ADC3	((volatile ADC_REG*)(0x40013C00))
+*/
+
+
 static volatile ADC_REG*const ADC1 = (volatile ADC_REG*)(0x40012400);
 static volatile ADC_REG*const ADC2 = (volatile ADC_REG*)(0x40012800);
 static volatile ADC_REG*const ADC3 = (volatile ADC_REG*)(0x40013C00);
+
 
 
 /*
@@ -107,5 +115,11 @@ static volatile ADC_REG*const ADC3 = (volatile ADC_REG*)(0x40013C00);
 #define	JSQ1	0
 		/*DR*/
 #define	ADC2DATA	16
+
+void ADC_TEM(void){}
+vidpfvid ADC_EOC[3] ={ADC_TEM,ADC_TEM,ADC_TEM},
+		 ADC_WD[3]  ={ADC_TEM,ADC_TEM,ADC_TEM} ,
+		 ADC_JEOC[3]={ADC_TEM,ADC_TEM,ADC_TEM};
+
 
 #endif /* ADC_PRIV_H_ */
