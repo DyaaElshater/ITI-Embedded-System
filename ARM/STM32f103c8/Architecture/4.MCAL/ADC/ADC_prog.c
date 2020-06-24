@@ -817,23 +817,23 @@ void ADC3_vidDiscontinuousModeInjectedChannelEnable(tdefAdcEn enuAdcEnCpy)
 
 void ADC1_vidSetDiscontinuousChannelNumber(tdefAdcNODiscontinuousCh enuAdcNODiscontinuousCh)
 {
-	ADC1->CR1 &= ~(0x7)<<DISCNUM;
+	ADC1->CR1 &= ~(0x7<<DISCNUM);
 	ADC1->CR1 |= enuAdcNODiscontinuousCh<<DISCNUM ;
 }
 void ADC2_vidSetDiscontinuousChannelNumber(tdefAdcNODiscontinuousCh enuAdcNODiscontinuousCh)
 {
-	ADC2->CR1 &= ~(0x7)<<DISCNUM;
+	ADC2->CR1 &= ~(0x7<<DISCNUM);
 	ADC2->CR1 |= enuAdcNODiscontinuousCh<<DISCNUM ;
 }
 void ADC3_vidSetDiscontinuousChannelNumber(tdefAdcNODiscontinuousCh enuAdcNODiscontinuousCh)
 {
-	ADC3->CR1 &= ~(0x7)<<DISCNUM;
+	ADC3->CR1 &= ~(0x7<<DISCNUM);
 	ADC3->CR1 |= enuAdcNODiscontinuousCh<<DISCNUM ;
 }
 
 void ADC1_vidDualMode(tdefAdcDualMode enumAdcDualModeCpy)
 {
-	ADC1->CR1 &= ~(0XF)<<DUALMOD;
+	ADC1->CR1 &= ~(0XF<<DUALMOD);
 	ADC1->CR1 |= enumAdcDualModeCpy<<DUALMOD;
 }
 
@@ -872,336 +872,335 @@ void ADC3_vidInjectedWatchDogEnable(tdefAdcEn enuAdcEnCpy)
 
 void ADC1_vidSetRegularLength(u8 u8LengthCpy)
 {
-	ADC1->SQR1 &= ~(0xf)<<L ;
+	ADC1->SQR1 &= ~(0xf<<L) ;
 	ADC1->SQR1 |= u8LengthCpy<<L;
 }
 void ADC1_vidSetSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ1 ;
+	ADC1->SQR3 &= ~(0xf<<SQ1) ;
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ1;
 }
 void ADC1_vidSetSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ2 ;
+	ADC1->SQR3 &= ~(0xf<<SQ2) ;
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ2;
 }
 void ADC1_vidSetSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ3 ;
+	ADC1->SQR3 &= ~(0xf<<SQ3 );
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ3;
 }
 void ADC1_vidSetSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ4 ;
+	ADC1->SQR3 &= ~(0xf<<SQ4) ;
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ4;
 }
 void ADC1_vidSetSQR5(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ5 ;
+	ADC1->SQR3 &= ~(0xf<<SQ5 );
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ5;
 }
 void ADC1_vidSetSQR6(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR3 &= ~(0xf)<<SQ6 ;
+	ADC1->SQR3 &= ~(0xf<<SQ6 );
 	ADC1->SQR3 |= enuAdcChannelCpy<<SQ6;
 }
 void ADC1_vidSetSQR7(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ7 ;
+	ADC1->SQR2 &= ~(0xf<<SQ7 );
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ7;
 }
 void ADC1_vidSetSQR8(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ8;
+	ADC1->SQR2 &= ~(0xf<<SQ8);
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ8;
 }
 void ADC1_vidSetSQR9(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ9;
+	ADC1->SQR2 &= ~(0xf<<SQ9);
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ9;
 }
 void ADC1_vidSetSQR10(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ10;
+	ADC1->SQR2 &= ~(0xf<<SQ10);
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ10;
 }
 void ADC1_vidSetSQR11(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ11;
+	ADC1->SQR2 &= ~(0xf<<SQ11);
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ11;
 }
 void ADC1_vidSetSQR12(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR2 &= ~(0xf)<<SQ12;
+	ADC1->SQR2 &= ~(0xf<<SQ12);
 	ADC1->SQR2 |= enuAdcChannelCpy<<SQ12;
 }
 void ADC1_vidSetSQR13(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR1 &= ~(0xf)<<SQ13;
+	ADC1->SQR1 &= ~(0xf<<SQ13);
 	ADC1->SQR1 |= enuAdcChannelCpy<<SQ13;
 }
 void ADC1_vidSetSQR14(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR1 &= ~(0xf)<<SQ14;
+	ADC1->SQR1 &= ~(0xf<<SQ14);
 	ADC1->SQR1 |= enuAdcChannelCpy<<SQ14;
 }
 void ADC1_vidSetSQR15(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR1 &= ~(0xf)<<SQ15;
+	ADC1->SQR1 &= ~(0xf<<SQ15);
 	ADC1->SQR1 |= enuAdcChannelCpy<<SQ15;
 }
 void ADC1_vidSetSQR16(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->SQR1 &= ~(0xf)<<SQ16;
+	ADC1->SQR1 &= ~(0xf<<SQ16);
 	ADC1->SQR1 |= enuAdcChannelCpy<<SQ16;
 }
 void ADC1_vidSetInjectedLength(u8 u8Length)
 {
-	ADC1->JSQR &= ~(0xf)<<JL;
+	ADC1->JSQR &= ~(0xf<<JL);
 	ADC1->JSQR |= u8Length<<JL;
 }
 void ADC1_vidSetJSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->JSQR &= ~(0xf)<<JSQ1;
+	ADC1->JSQR &= ~(0xf<<JSQ1);
 	ADC1->JSQR |= enuAdcChannelCpy<<JSQ1;
 }
 void ADC1_vidSetJSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->JSQR &= ~(0xf)<<JSQ2;
+	ADC1->JSQR &= ~(0xf<<JSQ2);
 	ADC1->JSQR |= enuAdcChannelCpy<<JSQ2;
 }
 void ADC1_vidSetJSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->JSQR &= ~(0xf)<<JSQ3;
+	ADC1->JSQR &= ~(0xf<<JSQ3);
 	ADC1->JSQR |= enuAdcChannelCpy<<JSQ3;
 }
 void ADC1_vidSetJSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC1->JSQR &= ~(0xf)<<JSQ4;
+	ADC1->JSQR &= ~(0xf<<JSQ4);
 	ADC1->JSQR |= enuAdcChannelCpy<<JSQ4;
 }
 
 
 void ADC2_vidSetRegularLength(u8 u8LengthCpy)
 {
-	ADC2->SQR1 &= ~(0xf)<<L ;
+	ADC2->SQR1 &= ~(0xf<<L) ;
 	ADC2->SQR1 |= u8LengthCpy<<L;
 }
 void ADC2_vidSetSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ1 ;
+	ADC2->SQR3 &= ~(0xf<<SQ1) ;
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ1;
 }
 void ADC2_vidSetSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ2 ;
+	ADC2->SQR3 &= ~(0xf<<SQ2) ;
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ2;
 }
 void ADC2_vidSetSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ3 ;
+	ADC2->SQR3 &= ~(0xf<<SQ3 );
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ3;
 }
 void ADC2_vidSetSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ4 ;
+	ADC2->SQR3 &= ~(0xf<<SQ4) ;
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ4;
 }
 void ADC2_vidSetSQR5(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ5 ;
+	ADC2->SQR3 &= ~(0xf<<SQ5 );
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ5;
 }
 void ADC2_vidSetSQR6(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR3 &= ~(0xf)<<SQ6 ;
+	ADC2->SQR3 &= ~(0xf<<SQ6 );
 	ADC2->SQR3 |= enuAdcChannelCpy<<SQ6;
 }
 void ADC2_vidSetSQR7(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ7 ;
+	ADC2->SQR2 &= ~(0xf<<SQ7 );
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ7;
 }
 void ADC2_vidSetSQR8(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ8;
+	ADC2->SQR2 &= ~(0xf<<SQ8);
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ8;
 }
 void ADC2_vidSetSQR9(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ9;
+	ADC2->SQR2 &= ~(0xf<<SQ9);
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ9;
 }
 void ADC2_vidSetSQR10(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ10;
+	ADC2->SQR2 &= ~(0xf<<SQ10);
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ10;
 }
 void ADC2_vidSetSQR11(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ11;
+	ADC2->SQR2 &= ~(0xf<<SQ11);
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ11;
 }
 void ADC2_vidSetSQR12(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR2 &= ~(0xf)<<SQ12;
+	ADC2->SQR2 &= ~(0xf<<SQ12);
 	ADC2->SQR2 |= enuAdcChannelCpy<<SQ12;
 }
 void ADC2_vidSetSQR13(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR1 &= ~(0xf)<<SQ13;
+	ADC2->SQR1 &= ~(0xf<<SQ13);
 	ADC2->SQR1 |= enuAdcChannelCpy<<SQ13;
 }
 void ADC2_vidSetSQR14(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR1 &= ~(0xf)<<SQ14;
+	ADC2->SQR1 &= ~(0xf<<SQ14);
 	ADC2->SQR1 |= enuAdcChannelCpy<<SQ14;
 }
 void ADC2_vidSetSQR15(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR1 &= ~(0xf)<<SQ15;
+	ADC2->SQR1 &= ~(0xf<<SQ15);
 	ADC2->SQR1 |= enuAdcChannelCpy<<SQ15;
 }
 void ADC2_vidSetSQR16(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->SQR1 &= ~(0xf)<<SQ16;
+	ADC2->SQR1 &= ~(0xf<<SQ16);
 	ADC2->SQR1 |= enuAdcChannelCpy<<SQ16;
 }
 void ADC2_vidSetInjectedLength(u8 u8Length)
 {
-	ADC2->JSQR &= ~(0xf)<<JL;
+	ADC2->JSQR &= ~(0xf<<JL);
 	ADC2->JSQR |= u8Length<<JL;
 }
 void ADC2_vidSetJSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->JSQR &= ~(0xf)<<JSQ1;
+	ADC2->JSQR &= ~(0xf<<JSQ1);
 	ADC2->JSQR |= enuAdcChannelCpy<<JSQ1;
 }
 void ADC2_vidSetJSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->JSQR &= ~(0xf)<<JSQ2;
+	ADC2->JSQR &= ~(0xf<<JSQ2);
 	ADC2->JSQR |= enuAdcChannelCpy<<JSQ2;
 }
 void ADC2_vidSetJSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->JSQR &= ~(0xf)<<JSQ3;
+	ADC2->JSQR &= ~(0xf<<JSQ3);
 	ADC2->JSQR |= enuAdcChannelCpy<<JSQ3;
 }
 void ADC2_vidSetJSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC2->JSQR &= ~(0xf)<<JSQ4;
+	ADC2->JSQR &= ~(0xf<<JSQ4);
 	ADC2->JSQR |= enuAdcChannelCpy<<JSQ4;
 }
 
 
 void ADC3_vidSetRegularLength(u8 u8LengthCpy)
 {
-	ADC3->SQR1 &= ~(0xf)<<L ;
+	ADC3->SQR1 &= ~(0xf<<L) ;
 	ADC3->SQR1 |= u8LengthCpy<<L;
 }
 void ADC3_vidSetSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ1 ;
+	ADC3->SQR3 &= ~(0xf<<SQ1) ;
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ1;
 }
 void ADC3_vidSetSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ2 ;
+	ADC3->SQR3 &= ~(0xf<<SQ2) ;
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ2;
 }
 void ADC3_vidSetSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ3 ;
+	ADC3->SQR3 &= ~(0xf<<SQ3 );
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ3;
 }
 void ADC3_vidSetSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ4 ;
+	ADC3->SQR3 &= ~(0xf<<SQ4) ;
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ4;
 }
 void ADC3_vidSetSQR5(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ5 ;
+	ADC3->SQR3 &= ~(0xf<<SQ5 );
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ5;
 }
 void ADC3_vidSetSQR6(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR3 &= ~(0xf)<<SQ6 ;
+	ADC3->SQR3 &= ~(0xf<<SQ6 );
 	ADC3->SQR3 |= enuAdcChannelCpy<<SQ6;
 }
 void ADC3_vidSetSQR7(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ7 ;
+	ADC3->SQR2 &= ~(0xf<<SQ7 );
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ7;
 }
 void ADC3_vidSetSQR8(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ8;
+	ADC3->SQR2 &= ~(0xf<<SQ8);
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ8;
 }
 void ADC3_vidSetSQR9(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ9;
+	ADC3->SQR2 &= ~(0xf<<SQ9);
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ9;
 }
 void ADC3_vidSetSQR10(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ10;
+	ADC3->SQR2 &= ~(0xf<<SQ10);
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ10;
 }
 void ADC3_vidSetSQR11(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ11;
+	ADC3->SQR2 &= ~(0xf<<SQ11);
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ11;
 }
 void ADC3_vidSetSQR12(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR2 &= ~(0xf)<<SQ12;
+	ADC3->SQR2 &= ~(0xf<<SQ12);
 	ADC3->SQR2 |= enuAdcChannelCpy<<SQ12;
 }
 void ADC3_vidSetSQR13(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR1 &= ~(0xf)<<SQ13;
+	ADC3->SQR1 &= ~(0xf<<SQ13);
 	ADC3->SQR1 |= enuAdcChannelCpy<<SQ13;
 }
 void ADC3_vidSetSQR14(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR1 &= ~(0xf)<<SQ14;
+	ADC3->SQR1 &= ~(0xf<<SQ14);
 	ADC3->SQR1 |= enuAdcChannelCpy<<SQ14;
 }
 void ADC3_vidSetSQR15(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR1 &= ~(0xf)<<SQ15;
+	ADC3->SQR1 &= ~(0xf<<SQ15);
 	ADC3->SQR1 |= enuAdcChannelCpy<<SQ15;
 }
 void ADC3_vidSetSQR16(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->SQR1 &= ~(0xf)<<SQ16;
+	ADC3->SQR1 &= ~(0xf<<SQ16);
 	ADC3->SQR1 |= enuAdcChannelCpy<<SQ16;
 }
 void ADC3_vidSetInjectedLength(u8 u8Length)
 {
-	ADC3->JSQR &= ~(0xf)<<JL;
+	ADC3->JSQR &= ~(0xf<<JL);
 	ADC3->JSQR |= u8Length<<JL;
 }
 void ADC3_vidSetJSQR1(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->JSQR &= ~(0xf)<<JSQ1;
+	ADC3->JSQR &= ~(0xf<<JSQ1);
 	ADC3->JSQR |= enuAdcChannelCpy<<JSQ1;
 }
 void ADC3_vidSetJSQR2(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->JSQR &= ~(0xf)<<JSQ2;
+	ADC3->JSQR &= ~(0xf<<JSQ2);
 	ADC3->JSQR |= enuAdcChannelCpy<<JSQ2;
 }
 void ADC3_vidSetJSQR3(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->JSQR &= ~(0xf)<<JSQ3;
+	ADC3->JSQR &= ~(0xf<<JSQ3);
 	ADC3->JSQR |= enuAdcChannelCpy<<JSQ3;
 }
 void ADC3_vidSetJSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
-	ADC3->JSQR &= ~(0xf)<<JSQ4;
+	ADC3->JSQR &= ~(0xf<<JSQ4);
 	ADC3->JSQR |= enuAdcChannelCpy<<JSQ4;
 }
-
