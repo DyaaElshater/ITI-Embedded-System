@@ -3,7 +3,7 @@
 /**	Date		:	6/1/2019									*/
 /**	Description	:	ADC Private file							*/
 /** MCU			:	STM32F103C8									*/
-/**	Version		:	1.0 V									`	*/
+/**	Version		:	2.0 V									`	*/
 /****************************************************************/
 
 #ifndef ADC_PRIV_H_
@@ -120,6 +120,12 @@ void ADC_TEM(void){}
 vidpfvid ADC_EOC[3] ={ADC_TEM,ADC_TEM,ADC_TEM},
 		 ADC_WD[3]  ={ADC_TEM,ADC_TEM,ADC_TEM} ,
 		 ADC_JEOC[3]={ADC_TEM,ADC_TEM,ADC_TEM};
+
+#define ADC_CHECK_AWD_BIT	1
+#define ADC_CHECK_EOC_BIT	2
+#define ADC_CHECK_JEOC_BIT	4
+#define ADC_CHECK_JSTRT_BIT	8
+#define ADC_CHECK_STRT_BIR	16
 
 
 #endif /* ADC_PRIV_H_ */

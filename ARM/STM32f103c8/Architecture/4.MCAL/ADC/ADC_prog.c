@@ -3,7 +3,7 @@
 /**	Date		:	6/1/2019									*/
 /**	Description	:	ADC implementation file						*/
 /** MCU			:	STM32F103C8									*/
-/**	Version		:	1.0 V									`	*/
+/**	Version		:	2.0 V									`	*/
 /****************************************************************/
 #include "Std_types.h"
 #include "DELAY.h"
@@ -126,6 +126,10 @@ void ADC1_vidINIT()
 	/*Setting Dual Mode */
 	ADC1->CR1 |= ADC1_DUAL_MODE<<DUALMOD;
 
+	/*Setting interrupt enable*/
+	ADC1->CR1 |=ADC1_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE <<EOCIE;
+	ADC1->CR1 |=ADC1_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE <<JEOCIE;
+	ADC1->CR1 |=ADC1_WATCH_DOG_INTERRUPT_ENABLE<<AWDIE;
 }
 
 
@@ -237,6 +241,11 @@ void ADC2_vidINIT()
 	ADC2->CR1 |= ADC2_INJECtED_DISCONTINUOUS_MODE_ENABLE<<JDISCEN;
 	ADC2->CR1 |= ADC2_DISCONTINUOUS_MODE_NO_CHANNELS <<DISCNUM;
 
+	/*Setting interrupt enable*/
+	ADC2->CR1 |=ADC2_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE <<EOCIE;
+	ADC2->CR1 |=ADC2_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE <<JEOCIE;
+	ADC2->CR1 |=ADC2_WATCH_DOG_INTERRUPT_ENABLE<<AWDIE;
+
 }
 void ADC3_vidINIT()
 {
@@ -346,6 +355,10 @@ void ADC3_vidINIT()
 	ADC3->CR1 |= ADC3_INJECtED_DISCONTINUOUS_MODE_ENABLE<<JDISCEN;
 	ADC3->CR1 |= ADC3_DISCONTINUOUS_MODE_NO_CHANNELS <<DISCNUM;
 
+	/*Setting interrupt enable*/
+	ADC3->CR1 |=ADC3_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE <<EOCIE;
+	ADC3->CR1 |=ADC3_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE <<JEOCIE;
+	ADC3->CR1 |=ADC3_WATCH_DOG_INTERRUPT_ENABLE<<AWDIE;
 }
 
 
@@ -698,15 +711,15 @@ void ADC3_vidEnableEndOfConvertionInterrupt(tdefAdcEn enuAdcEn)
 
 void ADC1_vidSetEndOfConvertionCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_EOC[1]=pfCallBackCpy;
+	ADC_EOC[0]=pfCallBackCpy;
 }
 void ADC2_vidSetEndOfConvertionCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_EOC[2]=pfCallBackCpy;
+	ADC_EOC[1]=pfCallBackCpy;
 }
 void ADC3_vidSetEndOfConvertionCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_EOC[3]=pfCallBackCpy;
+	ADC_EOC[2]=pfCallBackCpy;
 }
 
 void ADC1_vidEnableWatchDogInterrupt(tdefAdcEn enuAdcEn)
@@ -727,15 +740,15 @@ void ADC3_vidEnableWatchDogInterrupt(tdefAdcEn enuAdcEn)
 
 void ADC1_vidSetWatchDogCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_WD[1]=pfCallBackCpy;
+	ADC_WD[0]=pfCallBackCpy;
 }
 void ADC2_vidSetWatchDogCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_WD[2]=pfCallBackCpy;
+	ADC_WD[1]=pfCallBackCpy;
 }
 void ADC3_vidSetWatchDogCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_WD[3]=pfCallBackCpy;
+	ADC_WD[2]=pfCallBackCpy;
 }
 
 void ADC1_vidEnableEndOfConvertionInjectedChannelsInterrupt(tdefAdcEn enuAdcEn)
@@ -756,15 +769,15 @@ void ADC3_vidEnableEndOfConvertionInjectedChannelsInterrupt(tdefAdcEn enuAdcEn)
 
 void ADC1_vidSetEndOfConvertionInjectedChannelsCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_JEOC[1]=pfCallBackCpy;
+	ADC_JEOC[0]=pfCallBackCpy;
 }
 void ADC2_vidSetEndOfConvertionInjectedChannelsCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_JEOC[2]=pfCallBackCpy;
+	ADC_JEOC[1]=pfCallBackCpy;
 }
 void ADC3_vidSetEndOfConvertionInjectedChannelsCallBackFunction(vidpfvid pfCallBackCpy)
 {
-	ADC_JEOC[3]=pfCallBackCpy;
+	ADC_JEOC[2]=pfCallBackCpy;
 }
 
 void ADC1_vidAutomaticInjectedGroupconversionEnable(tdefAdcEn enuAdcEnCpy)
@@ -1203,4 +1216,128 @@ void ADC3_vidSetJSQR4(tdefAdcChannels enuAdcChannelCpy)
 {
 	ADC3->JSQR &= ~(0xf<<JSQ4);
 	ADC3->JSQR |= enuAdcChannelCpy<<JSQ4;
+}
+
+u8 ADC1_u8CheckAnalogWatchDogFlag()
+{
+	return GET_BIT(ADC1->SR,AWD);
+}
+u8 ADC2_u8CheckAnalogWatchDogFlag()
+{
+	return GET_BIT(ADC2->SR,AWD);
+}
+u8 ADC3_u8CheckAnalogWatchDogFlag()
+{
+	return GET_BIT(ADC3->SR,AWD);
+}
+
+u8 ADC1_u8CheckRegularEndOfConversionFlag()
+{
+	return GET_BIT(ADC1->SR,EOC);
+}
+u8 ADC2_u8CheckRegularEndOfConversionFlag()
+{
+	return GET_BIT(ADC2->SR,EOC);
+}
+u8 ADC3_u8CheckRegularEndOfConversionFlag()
+{
+	return GET_BIT(ADC3->SR,EOC);
+}
+
+u8 ADC1_u8CheckInjectedEndOfConversion()
+{
+	return GET_BIT(ADC1->SR,JEOC);
+}
+u8 ADC2_u8CheckInjectedEndOfConversion()
+{
+	return GET_BIT(ADC2->SR,JEOC);
+}
+u8 ADC3_u8CheckInjectedEndOfConversion()
+{
+	return GET_BIT(ADC3->SR,JEOC);
+}
+
+u8 ADC1_u8CheckRegularStartFlag()
+{
+	return GET_BIT(ADC1->SR,STRT);
+}
+u8 ADC2_u8CheckRegularStartFlag()
+{
+	return GET_BIT(ADC2->SR,STRT);
+}
+u8 ADC3_u8CheckRegularStartFlag()
+{
+	return GET_BIT(ADC3->SR,STRT);
+}
+
+u8 ADC1_u8CheckInjectedStartFlag()
+{
+	return GET_BIT(ADC1->SR,JSTRT);
+}
+u8 ADC2_u8CheckInjectedStartFlag()
+{
+	return GET_BIT(ADC2->SR,JSTRT);
+}
+u8 ADC3_u8CheckInjectedStartFlag()
+{
+	return GET_BIT(ADC3->SR,JSTRT);
+}
+
+
+/********* Interrupts ***********/
+
+void ADC1_2_IRQHandler(void)
+{
+
+	if(ADC1->SR & ADC_CHECK_EOC_BIT)
+	{
+		CLEAR_BIT(ADC1->SR,EOC);
+		ADC_EOC[0]();
+	}
+	else if(ADC2->SR&ADC_CHECK_EOC_BIT)
+	{
+		CLEAR_BIT(ADC2->SR,EOC);
+		ADC_EOC[1]();
+	}
+	else if(ADC1->SR & ADC_CHECK_JEOC_BIT)
+	{
+		CLEAR_BIT(ADC1->SR,JEOC);
+		ADC_JEOC[0]();
+	}
+	else if(ADC2->SR & ADC_CHECK_JEOC_BIT)
+	{
+		CLEAR_BIT(ADC2->SR,JEOC);
+		ADC_JEOC[1]();
+	}
+	else if(ADC1->SR & ADC_CHECK_AWD_BIT)
+	{
+		CLEAR_BIT(ADC1->SR,AWD);
+		ADC_WD[0]();
+	}
+	else if(ADC2->SR & ADC_CHECK_AWD_BIT)
+	{
+		CLEAR_BIT(ADC2->SR,AWD);
+		ADC_WD[1]();
+	}
+	else
+	{}
+}
+void ADC3_IRQHandler(void)
+{
+	if(ADC3->SR & ADC_CHECK_EOC_BIT)
+	{
+		CLEAR_BIT(ADC3->SR,EOC);
+		ADC_EOC[2]();
+	}
+	else if(ADC3->SR & ADC_CHECK_JEOC_BIT)
+	{
+		CLEAR_BIT(ADC3->SR,JEOC);
+		ADC_JEOC[2]();
+	}
+	else if(ADC3->SR & ADC_CHECK_AWD_BIT)
+	{
+		CLEAR_BIT(ADC3->SR,AWD);
+		ADC_WD[2]();
+	}
+	else {}
 }

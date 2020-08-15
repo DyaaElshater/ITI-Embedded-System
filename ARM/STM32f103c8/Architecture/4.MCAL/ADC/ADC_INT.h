@@ -3,7 +3,7 @@
 /**	Date		:	6/1/2019									*/
 /**	Description	:	ADC Interface file							*/
 /** MCU			:	STM32F103C8									*/
-/**	Version		:	1.0 V									`	*/
+/**	Version		:	2.0 V									`	*/
 /****************************************************************/
 
 #ifndef ADC_INT_H_
@@ -306,5 +306,25 @@ void ADC3_vidSetJSQR1(tdefAdcChannels enuAdcChannelCpy);
 void ADC3_vidSetJSQR2(tdefAdcChannels enuAdcChannelCpy);
 void ADC3_vidSetJSQR3(tdefAdcChannels enuAdcChannelCpy);
 void ADC3_vidSetJSQR4(tdefAdcChannels enuAdcChannelCpy);
+
+u8 ADC1_u8CheckAnalogWatchDogFlag();
+u8 ADC2_u8CheckAnalogWatchDogFlag();
+u8 ADC3_u8CheckAnalogWatchDogFlag();
+
+u8 ADC1_u8CheckRegularEndOfConversionFlag();
+u8 ADC2_u8CheckRegularEndOfConversionFlag();
+u8 ADC3_u8CheckRegularEndOfConversionFlag();
+
+u8 ADC1_u8CheckInjectedEndOfConversion();
+u8 ADC2_u8CheckInjectedEndOfConversion();
+u8 ADC3_u8CheckInjectedEndOfConversion();
+
+u8 ADC1_u8CheckRegularStartFlag();
+u8 ADC2_u8CheckRegularStartFlag();
+u8 ADC3_u8CheckRegularStartFlag();
+
+u8 ADC1_u8CheckInjectedStartFlag();
+u8 ADC2_u8CheckInjectedStartFlag();
+u8 ADC3_u8CheckInjectedStartFlag();
 
 #endif /* ADC_INT_H_ */

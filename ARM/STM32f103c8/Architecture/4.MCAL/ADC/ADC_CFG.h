@@ -3,7 +3,7 @@
 /**	Date		:	6/1/2019									*/
 /**	Description	:	ADC Configuration file						*/
 /** MCU			:	STM32F103C8									*/
-/**	Version		:	1.0 V									`	*/
+/**	Version		:	2.0 V									`	*/
 /****************************************************************/
 
 #ifndef ADC_CFG_H_
@@ -12,7 +12,7 @@
 /**	Configure the mode for each ADC								*/
 /*					-	ADC_CONTINUES_MODE						*/
 /*					-	ADC_SINGLE_MODE							*/
-#define ADC1_MODE		ADC_CONTINUES_MODE
+#define ADC1_MODE		ADC_SINGLE_MODE
 #define ADC2_MODE		ADC_CONTINUES_MODE
 #define ADC3_MODE		ADC_CONTINUES_MODE
 
@@ -20,14 +20,14 @@
 /*					-	ADC_SINGLE_CHANNEL						*/
 /*					-	ADC_MULTI_CHANNEL						*/
 
-#define ADC1_CHANNEL_MODE		ADC_SINGLE_CHANNEL
-#define ADC2_CHANNEL_MODE		ADC_MULTI_CHANNEL
+#define ADC1_CHANNEL_MODE		ADC_MULTI_CHANNEL
+#define ADC2_CHANNEL_MODE		ADC_SINGLE_CHANNEL
 #define ADC3_CHANNEL_MODE		ADC_MULTI_CHANNEL
 
 /**	Determine Length of Regular channels of ADC 1,2 and 3	*/
 /* 		ADCx_CHANNELS_LENGTH = 1 -> 16						*/
-#define ADC1_CHANNELS_LENGTH		1
-#define ADC2_CHANNELS_LENGTH		2
+#define ADC1_CHANNELS_LENGTH		2
+#define ADC2_CHANNELS_LENGTH		1
 #define ADC3_CHANNELS_LENGTH		5
 
 /**	Determine Length of Injected channels of ADC 1,2 and 3	*/
@@ -105,12 +105,12 @@
 /** Determine the Regular Sequence 	in the following Array	*/
 u8 ADC1_arrU8RegularSequence[ADC1_CHANNELS_LENGTH]=
 {
-		ADC_CHANNEL1
+		ADC_CHANNEL1,
+		ADC_CHANNEL3
 };
 u8 ADC2_arrU8RegularSequence[ADC2_CHANNELS_LENGTH]=
 {
-		ADC_CHANNEL5,
-		ADC_CHANNEL1
+		ADC_CHANNEL5
 };
 u8 ADC3_arrU8RegularSequence[ADC3_CHANNELS_LENGTH]=
 {
@@ -204,5 +204,24 @@ u8 ADC3_arrU8InjectedSequence[ADC3_INJECTED_CHANNELS_LENGTH]=
 /*			-	Slow_interleaved_mode_only									*/
 /*			-	Alternate_trigger_mode_only									*/
 #define ADC1_DUAL_MODE		Independent_mode
+
+
+/** Configure the interrupt enable 											*/
+/*	ADCx_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE		:			 		*/
+/*	ADCx_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE	:			 		*/
+/*	ADCx_WATCH_DOG_INTERRUPT_ENABLE	:								 		*/
+/*														- ADC_Disable		*/
+/*														- ADC_Enable		*/
+#define ADC1_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE		ADC_Enable
+#define ADC2_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE		ADC_Disable
+#define ADC3_REGULAR_END_OF_CONVERSION_INTERRUPT_ENABLE		ADC_Disable
+
+#define ADC1_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE	ADC_Disable
+#define ADC2_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE	ADC_Disable
+#define ADC3_INJECTED_END_OF_CONVERSION_INTERRUPT_ENABLE	ADC_Disable
+
+#define ADC1_WATCH_DOG_INTERRUPT_ENABLE						ADC_Disable
+#define ADC2_WATCH_DOG_INTERRUPT_ENABLE						ADC_Disable
+#define ADC3_WATCH_DOG_INTERRUPT_ENABLE						ADC_Disable
 
 #endif /* ADC_CFG_H_ */
