@@ -12,7 +12,7 @@
 /**	Configure the mode for each ADC								*/
 /*					-	ADC_CONTINUES_MODE						*/
 /*					-	ADC_SINGLE_MODE							*/
-#define ADC1_MODE		ADC_SINGLE_MODE
+#define ADC1_MODE		ADC_CONTINUES_MODE
 #define ADC2_MODE		ADC_CONTINUES_MODE
 #define ADC3_MODE		ADC_CONTINUES_MODE
 

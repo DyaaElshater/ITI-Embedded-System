@@ -16,8 +16,6 @@
 
 void ADC1_vidINIT()
 {
-	/*Enable ADC1*/
-	SET_BIT(ADC1->CR2,ADON);
 
 	/*Setting ADC1 MODE*/
 #if	ADC1_MODE == ADC_CONTINUES_MODE || ADC1_MODE  == ADC_SINGLE_MODE
@@ -135,8 +133,6 @@ void ADC1_vidINIT()
 
 void ADC2_vidINIT()
 {
-	/*Enable ADC2*/
-	SET_BIT(ADC2->CR2,ADON);
 
 	/*Setting ADC2 MODE*/
 #if	ADC2_MODE == ADC_CONTINUES_MODE || ADC2_MODE  == ADC_SINGLE_MODE
@@ -249,8 +245,6 @@ void ADC2_vidINIT()
 }
 void ADC3_vidINIT()
 {
-	/*Enable ADC3*/
-	SET_BIT(ADC3->CR2,ADON);
 
 	/*Setting ADC3 MODE*/
 #if	ADC3_MODE == ADC_CONTINUES_MODE || ADC3_MODE  == ADC_SINGLE_MODE
@@ -365,14 +359,20 @@ void ADC3_vidINIT()
 void ADC1_vidRegularChannel_Start()
 {
 	SET_BIT(ADC1->CR2 , SWSTART);
+	/*Enable ADC1*/
+	SET_BIT(ADC1->CR2,ADON);
 }
 void ADC2_vidRegularChannel_Start()
 {
 	SET_BIT(ADC2->CR2 , SWSTART);
+	/*Enable ADC2*/
+	SET_BIT(ADC2->CR2,ADON);
 }
 void ADC3_vidRegularChannel_Start()
 {
 	SET_BIT(ADC3->CR2 , SWSTART);
+	/*Enable ADC3*/
+	SET_BIT(ADC3->CR2,ADON);
 }
 
 
