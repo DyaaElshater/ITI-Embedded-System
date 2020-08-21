@@ -3,7 +3,7 @@
 /** Date		: 6/7/2020											*/
 /** Description	: DMA interface file								*/
 /** MCU			: STM32F103C8										*/
-/** Version 	: 1.0V												*/
+/** Version 	: 3.0V												*/
 /********************************************************************/
 
 #ifndef DMA_INT_H_
@@ -93,10 +93,10 @@ typedef enum
 }tdefDMAChannels;
 
 /** enuDmaChannelCpy -> DMA_Channel_x , x should be from 1 to 7*/
-void DMA1_vidEnable_Channel1(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
+void DMA1_vidEnable_Channel(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
 
 /** enuDmaChannelCpy -> DMA_Channel_x , x should be from 1 to 5*/
-void DMA2_vidEnable_Channel1(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
+void DMA2_vidEnable_Channel(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
 
 u8 DMA1_u8CheckGlobalInterrutFlag(tdefDMAChannels enuDmaChannel);
 u8 DMA1_u8CheckTransferCompleteFlag(tdefDMAChannels enuDmaChannel);
@@ -150,14 +150,14 @@ void DMA2_vidEnableHallfTransferInterrupt(tdefDMAChannels enuDmaChannelCpy,tdefD
 void DMA1_vidEnableTransferCompleteInterrupt(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
 void DMA2_vidEnableTransferCompleteInterrupt(tdefDMAChannels enuDmaChannelCpy,tdefDmaEn enuDmaEnCpy);
 
-void DMA1_vidSetCallBcaFunction_TransferError(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
-void DMA2_vidSetCallBcaFunction_TransferError(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA1_vidSetCallBackFunction_TransferError(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA2_vidSetCallBackFunction_TransferError(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
 
-void DMA1_vidSetCallBcaFunction_HalfTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
-void DMA2_vidSetCallBcaFunction_HalfTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA1_vidSetCallBackFunction_HalfTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA2_vidSetCallBackFunction_HalfTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
 
-void DMA1_vidSetCallBcaFunction_CompleteTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
-void DMA2_vidSetCallBcaFunction_CompleteTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA1_vidSetCallBackFunction_CompleteTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
+void DMA2_vidSetCallBackFunction_CompleteTransfer(tdefDMAChannels enuDmaChannelCpy,vidpfvid pfCallBackCpy);
 
 void DMA1_vidSetNumberOfDataTransfer(tdefDMAChannels enuDmaChannelCpy,u16 u16DataCpy);
 void DMA2_vidSetNumberOfDataTransfer(tdefDMAChannels enuDmaChannelCpy,u16 u16DataCpy);

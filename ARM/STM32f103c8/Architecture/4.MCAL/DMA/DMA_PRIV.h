@@ -3,7 +3,7 @@
 /** Date		: 6/7/2020											*/
 /** Description	: DMA private file									*/
 /** MCU			: STM32F103C8										*/
-/** Version 	: 1.0V												*/
+/** Version 	: 3.0V												*/
 /********************************************************************/
 
 
@@ -172,5 +172,11 @@ static vidpfvid DMA2_HTI[DMA2_MAX_CHANNELS];
 
 static vidpfvid DMA1_TEI[DMA1_MAX_CHANNELS];
 static vidpfvid DMA2_TEI[DMA2_MAX_CHANNELS];
+
+#define DMA_MASK_GIF_BIT		1
+#define DMA_MASK_TCIF_BIT		2
+#define DMA_MASK_HTIF_BIT		4
+#define DMA_MASK_TEIF_BIT		8
+
 
 #endif /* DMA_PRIV_H_ */
